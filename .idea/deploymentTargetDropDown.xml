@@ -2,7 +2,22 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="RecipeTest3">
+        <State />
+      </entry>
+      <entry key="RecipeTest4">
+        <State />
+      </entry>
+      <entry key="RecipeTest5">
+        <State />
+      </entry>
       <entry key="app">
+        <State />
+      </entry>
+      <entry key="testRecipeObjectInstantiation()">
+        <State />
+      </entry>
+      <entry key="testRecipeSearch()">
         <State />
       </entry>
     </value>
