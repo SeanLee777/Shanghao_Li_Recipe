@@ -1,5 +1,6 @@
 package algonquin.cst2335.li000543;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -134,20 +135,29 @@ public class RecipeFragment extends Fragment {
                 queue.add(request);
             });
 
-            binding.deleteButton.setOnClickListener(v -> thread.execute(() -> {
-                RecipeObject deletedRecipe = rDAO.getRecipeById(selected.getId()).get(0);
-                File imageFile = new File(requireContext().getFilesDir(), deletedRecipe.image);
+            binding.deleteButton.setOnClickListener(v -> {
+                // 创建并显示确认删除的 AlertDialog
+                new AlertDialog.Builder(requireContext())
+                        .setTitle(R.string.confirm_delete_title) // 设置标题
+                        .setMessage(R.string.confirm_delete_message) // 设置消息内容
+                        .setPositiveButton(R.string.delete, (dialog, which) -> {
+                            // 用户确认删除
+                            thread.execute(() -> {
+                                RecipeObject deletedRecipe = rDAO.getRecipeById(selected.getId()).get(0);
+                                File imageFile = new File(requireContext().getFilesDir(), deletedRecipe.image);
 
-                rDAO.deleteRecipe(deletedRecipe);
-                imageFile.delete();
+                                rDAO.deleteRecipe(deletedRecipe);
+                                imageFile.delete();
 
-                requireActivity().runOnUiThread(() -> {
-                    binding.deleteButton.setVisibility(View.GONE);
-                    binding.saveButton.setVisibility(View.VISIBLE);
-
-                    mainActivity.myAdapter.notifyDataSetChanged();
-                });
-            }));
+                                requireActivity().runOnUiThread(() -> {
+                                    // 按钮在删除后仍然可见
+                                    mainActivity.myAdapter.notifyDataSetChanged();
+                                });
+                            });
+                        })
+                        .setNegativeButton(R.string.cancel, null) // 用户取消删除
+                        .show();
+            });
 
 
             thread.execute(() -> {

@@ -17,4 +17,9 @@
     <string name="Help">This App is a user-friendly mobile application that streamlines the process of finding recipes. Simply input the name of a recipe, and the app, powered by the Spoonacular API, retrieves a list of corresponding recipes. You can browse through the results, view detailed information, save your favorite recipes to a local database for easy access later. The app also remembers your search term for a seamless user experience.</string>
     <string name="about">About</string>
     <string name="OK">OK</string>
+    <string name="help">help</string>
+    <string name="confirm_delete_title">Delete Recipe</string>
+    <string name="confirm_delete_message">Are you sure you want to delete this recipe?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
 </resources>

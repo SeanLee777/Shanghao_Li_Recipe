@@ -1,4 +1,10 @@
 package algonquin.cst2335.li000543;
+/**
+ * Author: Shanghao Li 040903008
+ * Section: 031
+ * Description:
+ *
+ * */
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -9,7 +15,7 @@ public class Recipe {
     private String title;
     private String iconURL;
 
-    //constructor of RecipeObject
+    //constructor of Recipe
     public Recipe(int id, String title, String iconURL){
         this.id=id;
         this.title=title;

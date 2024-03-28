@@ -11,6 +11,10 @@
     <string name="recipe_image">食谱图片</string>
     <string name="title_placeholder">标题</string>
     <string name="source_url_placeholder">来源网址</string>
+    <string name="confirm_delete_title">确认删除</string>
+    <string name="confirm_delete_message">您确认删除这个食谱吗？</string>
+    <string name="delete">删除</string>
+    <string name="cancel">取消</string>
     <string name="recipe_error_message">对不起，这个食谱不能被储存</string>
     <string name="recipe_save_error">对不起，这个食谱不能被对不起，这个食谱不能被储存</string>
     <string name="recipe_display_error">对不起，这个食谱不能被储存</string>
@@ -19,4 +23,5 @@
     <string name="Help">这个手机程序是一个用户友好的移动应用程序，它简化了食谱的发现。输入食谱名称，由Spoonacular API驱动的应用程序会获取一系列匹配的食谱。浏览结果，查看详细信息，将最爱保存到本地数据库，并随时轻松访问。该应用程序还会记住您的搜索词，以提供无缝的体验。</string>
     <string name="about">关于</string>
     <string name="OK">好的</string>
+    <string name="help">帮助</string>
 </resources>

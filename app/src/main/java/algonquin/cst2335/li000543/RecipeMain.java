@@ -195,10 +195,10 @@ public class RecipeMain extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
         if (itemId == R.id.Help) {
-            showSnackbar();
+            showAlertDialog();
             return true;
         } else if (itemId == R.id.About) {
-            showAlertDialog();
+            showSnackbar();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -210,15 +210,15 @@ public class RecipeMain extends AppCompatActivity {
 
             runOnUiThread(() -> {
                 View rootView = findViewById(android.R.id.content);
-                Snackbar.make(rootView, getString(R.string.Help) + savedRecipes.size(), Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(rootView, getString(R.string.About) + savedRecipes.size(), Snackbar.LENGTH_SHORT).show();
             });
         });
     }
 
     private void showAlertDialog() {
         new AlertDialog.Builder(this)
-                .setTitle(getString(R.string.about))
-                .setMessage(getString(R.string.About))
+                .setTitle(getString(R.string.help))
+                .setMessage(getString(R.string.Help))
                 .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
                 .show();
     }
