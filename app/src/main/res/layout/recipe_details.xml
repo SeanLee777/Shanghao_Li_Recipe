@@ -1,78 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecipeFragment">
+    android:fillViewport="true">
 
-    <!-- 图片视图 -->
-    <ImageView
-        android:id="@+id/imageViewRecipe"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/recipe_image"
-        android:adjustViewBounds="true" />
-
-    <!-- 可滚动视图用于容纳标题和摘要 -->
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/imageViewRecipe"
-        android:layout_above="@+id/layoutButtons"
-        android:fillViewport="true">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp">
-
-            <!-- 标题 -->
-            <TextView
-                android:id="@+id/textViewRecipeTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                tools:text="Recipe Title" />
-
-            <!-- 摘要 -->
-            <TextView
-                android:id="@+id/textViewRecipeSummary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                tools:text="Recipe Summary" />
-
-        </LinearLayout>
-    </ScrollView>
-
-    <!-- 底部按钮布局 -->
     <LinearLayout
-        android:id="@+id/layoutButtons"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_alignParentBottom="true">
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-        <!-- 保存按钮 -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/title_placeholder"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <WebView
+            android:id="@+id/summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <Button
             android:id="@+id/saveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/save_button" />
+            android:text="@string/save_button"
+            android:visibility="gone" />
 
-        <!-- 删除按钮 -->
         <Button
             android:id="@+id/deleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/delete_button" />
+            android:text="@string/delete_button"
+            android:visibility="gone" />
 
+        <TextView
+            android:id="@+id/sourceURL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:text="@string/source_url_placeholder"
+            android:textAlignment="center" />
     </LinearLayout>
-</RelativeLayout>
+</ScrollView>
